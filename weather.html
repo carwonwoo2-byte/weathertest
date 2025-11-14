@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 날씨</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="weather-app">
+        <h1>오늘의 날씨</h1>
+        
+        <div class="input-area">
+            <input type="text" id="city-input" placeholder="도시명(영문)을 입력하세요.">    
+            <button id="search-btn">검색</button>
+        </div>
+        
+        <div id="weather-info" class="info-card">
+            </div>
+        <div id="forecast-info" class="info-card" style="margin-top: 20px;">
+            </div>
+        <p id="error-message" class="error-text"></p>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>

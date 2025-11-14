@@ -1,0 +1,305 @@
+/* style.css */
+
+/* 1. 전체 레이아웃 및 배경 설정 (전체 화면 적용) */
+body {
+    font-family: 'Arial', sans-serif;
+    /* [배경 이미지 적용] ImageFX로 생성한 이미지를 배경으로 사용 */
+    background-image: url('사본 -Whisk_ef4bf446b6549a89149430ce216d2366eg.png');
+    background-size: cover; /* 화면을 가득 채우도록 크기 조정 */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 배경 고정 */
+    background-color: #e9ecef; /* 이미지 로딩 실패 시 대비 */
+    color: #343a40; /* 기본 텍스트 색상 (짙은 회색) */
+
+    /* [전체 화면 설정] */
+    margin: 0; 
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    
+    /* 콘텐츠 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 콘텐츠를 상단에서 시작 */
+}
+
+/* 2. 메인 컨테이너 (.weather-app) 스타일 */
+.weather-app {
+    /* 배경 이미지와 조화되도록 밝고 약간 투명하게 설정 */
+    background: rgba(255, 255, 255, 0.85); 
+    
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    
+    width: 650px; /* 전체 너비 확장 */
+    max-width: 90%;
+    text-align: center;
+    
+    margin-top: 50px; /* 상단 여백 추가 */
+    margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 옅은 테두리 */
+}
+
+h1 {
+    color: #343a40;
+    margin-bottom: 25px;
+}
+
+/* 3. 입력 필드 및 버튼 스타일 */
+.input-area {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+#city-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+#search-btn {
+    padding: 12px 20px;
+    background-color: #3498db; /* 부드러운 파란색 버튼 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#search-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 4. 정보 카드 (.info-card) 스타일 (현재 날씨 및 예보) */
+.info-card {
+    margin-top: 20px;
+    padding: 25px;
+    border: 1px solid rgba(200, 200, 200, 0.5); 
+    border-radius: 10px;
+    /* 배경 이미지에 맞게 투명도를 높여 뒷배경이 비치도록 설정 */
+    background-color: rgba(255, 255, 255, 0.6); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    text-align: left;
+    margin-bottom: 20px; 
+}
+
+/* style.css 파일에 추가/수정 */
+
+/* 1. 현재 날씨 헤더 */
+.weather-header {
+    text-align: center;
+    margin-bottom: 0px;
+}
+.city-name {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0; /* 상단 마진을 확실히 없앱니다. */
+    margin-bottom: 0; /* 하단 마진을 확실히 없앱니다. */
+}
+
+
+/* style.css 수정: 2. 온도 강조 섹션 */
+.main-temp-section {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    
+    gap: 0px; 
+    margin-top: 0px; /* [수정]: 상하 마진을 모두 0으로 설정하여 완벽히 밀착되게 합니다. */
+    margin-bottom: 30px;
+    padding-left: 0; 
+    width: auto;
+    margin-bottom: 10px;
+}
+
+/* style.css 수정: 2. 온도 강조 섹션 내 */
+
+.main-weather-icon {
+    width: 200px; 
+    height: 200px;
+    /* [핵심 수정 3]: 이전에용 적했던 왼쪽 마진과 오른쪽 마진을 제거/초기화합니다. */
+    margin: 0 auto; 
+    margin-top: 0px;
+}
+
+.temp-display {
+    /* [핵심 수정 4]: flex: 1; 과 margin-left: -190px; 등 강제 정렬 로직 제거 */
+    text-align: center; 
+    flex: none; 
+    margin-left: 0; 
+    padding-right: 0;
+}
+
+.large-temp {
+    font-size: 5em; 
+    font-weight: 900;
+    line-height: 1;
+    color: #34495e;
+    display: block;
+    text-align: center
+    /* [수정]: 여기는 text-align: center를 유지합니다. */
+}
+
+.feels-like {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    display: block;
+    margin-top: 5px;
+}
+
+/* style.css 수정: 3. 상세 정보 그리드 (아이콘/수치 분할) */
+.detail-info-grid {
+    display: flex;
+    justify-content: space-around;
+    
+    /* [핵심 수정]: 상단에 얇은 실선 추가 */
+    border-top: 1px solid #e9ecef; /* 아주 옅은 실선 */
+    
+    /* 패딩 및 마진 조정 */
+    padding: 20px 0; 
+    margin-top: 20px; /* 온도 섹션과의 간격 확보 */
+    margin-bottom: 20px; 
+
+    border-bottom: none; /* 하단 테두리는 제거 유지 */
+}
+
+.info-item {
+    text-align: center;
+    flex-basis: 30%; 
+}
+
+.info-item i {
+    font-size: 1.8em; /* [수정]: 아이콘을 살짝 키웁니다. (1.5em -> 1.8em) */
+    color: #3498db; 
+    margin-bottom: 8px; /* 아이콘과 텍스트 사이 간격 확보 */
+}
+
+.info-item span {
+    font-size: 0.9em; /* 정보 레이블 크기 */
+    color: #7f8c8d;
+}
+
+.info-item strong {
+    font-size: 1.3em; /* [수정]: 수치(1.0 m/s, 87%)를 강조 */
+    font-weight: 700;
+    margin-top: 3px;
+    color: #34495e;
+}
+/* style.css 파일의 가장 아래에 추가 */
+
+/* style.css 수정/추가: .sun-times-section */
+.sun-times-section {
+    display: flex;
+    /* [핵심 수정]: 컨테이너 내에서 요소들을 중앙에 배치합니다. */
+    justify-content: center; 
+    /* [수정]: 두 항목 사이의 간격을 지정합니다. */
+    gap: 50px; 
+    
+    padding: 10px 0;
+    margin-top: 10px;
+    font-size: 1.1em; 
+    color: #34495e; /* 텍스트 색상을 진하게 변경 */
+    border-top: none; /* 상단 구분선 제거 */
+}
+
+.sun-times-section p {
+    margin: 0; /* P 태그의 기본 마진 제거 */
+    text-align: center;
+}
+
+.sun-times-section i {
+    font-size: 1.2em;
+    color: #f39c12; 
+    margin-right: 8px;
+}
+
+.sun-times-section b {
+    font-weight: 700;
+}
+
+/* 5. 5일 예보 카드 스타일 */
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+/* 개별 예보 항목 스타일 (가로 정렬 및 크기 조정) */
+.forecast-day {
+    flex: 1 1 18%; /* 5개가 한 줄에 들어가도록 설정 */
+    border: 1px solid #e2e6ea;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 100px;
+    font-size: 0.85em;
+    background-color: rgba(255, 255, 255, 0.7); /* 흰색 + 약간의 투명도 */
+    transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+    transform: translateY(-3px); /* 호버 효과 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-day img {
+    width: 45px;
+    height: 45px;
+}
+
+.forecast-day h3 {
+    font-size: 0.9em;
+    color: #495057;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* 6. 옷차림 및 오류 메시지 스타일 */
+.info-card hr {
+   display: none;
+}
+
+.separator {
+    display: none; /* [핵심 수정]: 점선을 보이지 않게 합니다. */
+    /* 기존 border: 0; border-top: 1px solid #e9ecef; 등 다른 속성은 유지하거나 삭제해도 됩니다. */
+}
+
+
+/* 오류 텍스트 강조 */
+.error-text {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 215, 218, 0.9);
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* style.css 파일의 마지막에 추가 */
+
+/* 데이터가 없을 때 표시되는 정보 카드 영역을 숨깁니다. */
+/* (JavaScript가 정보를 채우면 자동으로 나타나게 됩니다.) */
+#weather-info:empty, 
+#forecast-info:empty {
+    display: none;
+    padding: 0; /* 숨겨진 상태에서는 패딩도 제거 */
+    margin: 0;  /* 숨겨진 상태에서는 마진도 제거 */
+}
+
+/* 오류 메시지 영역은 처음부터 숨깁니다. (JavaScript가 메시지를 넣을 때만 나타나게 함) */
+#error-message:empty {
+    display: none;
+}
